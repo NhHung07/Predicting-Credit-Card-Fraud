@@ -1,0 +1,8 @@
+name: ai_env   # đổi tên nếu muốn tạo env riêng: conda env create -f environment.yml -n fraud
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - -r requirements.txt

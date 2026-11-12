@@ -108,6 +108,6 @@ Gợi ý tiền tố commit: `feat:` (thêm chức năng), `exp:` (thí nghiệm
 
 | exp_id | Mô tả | CV AUC | Public LB | Private LB |
 |---|---|---|---|---|
-| _TODO_ | Baseline | | | |
+| `lgbm_a_v1` | LightGBM Baseline (24 raw features, 5-fold Stratified) | **0.94544** ± 0.00321 | **0.94568** | _[Chưa mở]_ |
 | _TODO_ | Submission cuối #1 | | | |
 | _TODO_ | Submission cuối #2 | | | |

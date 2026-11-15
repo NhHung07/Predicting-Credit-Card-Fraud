@@ -1,12 +1,7 @@
-# ===== Data & outputs (KHÔNG commit, chỉ giữ README + .gitkeep) =====
-data/**
-!data/**/
-!data/README.md
-!data/**/.gitkeep
-outputs/**
-!outputs/**/
-!outputs/README.md
-!outputs/**/.gitkeep
+# ===== Data & outputs (KHÔNG commit) =====
+data/
+outputs/
+submissions/
 *.zip
 *.parquet
 *.npy

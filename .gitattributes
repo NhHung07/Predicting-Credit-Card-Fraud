@@ -1,5 +1,5 @@
 # Khi merge/rebase, giữ lại dòng của CẢ HAI phía -> tránh conflict khi nhiều người cùng ghi nhật ký thí nghiệm
-experiments/results.csv merge=union
+results/results.csv merge=union
 
 # Chuẩn hóa xuống dòng
 *.py text eol=lf

@@ -2,7 +2,7 @@
 """
 Tạo file folds.csv dùng chung cho cả nhóm.
 Phương pháp: StratifiedKFold (5 folds, shuffle=True, random_state=42)
-Đầu ra: data/processed/folds.csv (gồm 2 cột: id, fold)
+Đầu ra: data/folds.csv (gồm 2 cột: id, fold)
 """
 
 import sys
@@ -10,8 +10,9 @@ from pathlib import Path
 import pandas as pd
 from sklearn.model_selection import StratifiedKFold
 
-RAW_TRAIN_PATH = Path("data/raw/train.csv")
-OUTPUT_PATH = Path("data/processed/folds.csv")
+ROOT = Path(__file__).resolve().parent.parent  # thư mục gốc repo
+RAW_TRAIN_PATH = ROOT / "data" / "train.csv"
+OUTPUT_PATH = ROOT / "data" / "folds.csv"
 N_SPLITS = 5
 SEED = 42
 

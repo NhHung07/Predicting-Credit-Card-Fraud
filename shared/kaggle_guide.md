@@ -45,7 +45,7 @@ flowchart TD
    - **Accelerator:** chọn **GPU T4 x2** hoặc **GPU P100** khi train XGBoost/CatBoost/Neural Net; chọn **None (CPU)** khi chỉ EDA hoặc chạy LightGBM nhẹ để tiết kiệm quota (~30h GPU/tuần/người).
    - **Persistence:** có thể bật *Files only* nếu làm việc nhiều phiên.
    - **Internet:** bật **On** nếu cần `git clone` repo hoặc cài thêm thư viện.
-3. Nếu muốn gọi các hàm dùng chung trong thư mục `src/` của GitHub repo ngay trên Kaggle Notebook:
+3. Nếu muốn gọi các hàm dùng chung trong thư mục `shared/` của GitHub repo ngay trên Kaggle Notebook:
    ```python
    !git clone -b <nhanh-cua-ban> https://github.com/NhHung07/Predicting-Credit-Card-Fraud.git
    import sys
@@ -60,17 +60,17 @@ flowchart TD
 ### Bước 3: Đồng bộ Notebook về GitHub
 Có 2 cách:
 - **Cách 1 (Trực tiếp trên Kaggle):** Trên thanh menu của Kaggle Notebook, chọn **File → Link to GitHub** → sau khi Save Version có thể chọn commit thẳng file `.ipynb` vào nhánh của bạn trên repo `NhHung07/Predicting-Credit-Card-Fraud`.
-- **Cách 2 (Tải về máy):** Chọn **File → Download Notebook (.ipynb)** → đặt vào `notebooks/kaggle/` hoặc `notebooks/scratch/<A|B|C>/` trong repo local → commit và push lên nhánh của mình (công cụ `nbstripout` sẽ tự động dọn output nặng nếu đã bật).
+- **Cách 2 (Tải về máy):** Chọn **File → Download Notebook (.ipynb)** → đặt vào thư mục của mình (`A/`, `B/` hoặc `C/`) trong repo local → commit và push lên nhánh của mình (notebook được commit kèm output, gồm cả đồ thị).
 
 ### Bước 4: Nộp bài (Submit) & Ghi nhật ký
 - **Nộp từ Kaggle Notebook Output:** Mở bản Save Version vừa chạy xong → tab **Output** → chọn file `<exp_id>_sub.csv` → nhấn **Submit**.
 - **Nộp bằng dòng lệnh (nếu tải file về máy):**
   ```bash
   kaggle competitions submit -c playground-series-s6e11 \
-    -f outputs/submissions/<exp_id>.csv \
+    -f submissions/<exp_id>.csv \
     -m "<exp_id> | CV: 0.9xxx | features: ... | params: ..."
   ```
-- **Ghi kết quả:** Cập nhật ngay 1 dòng vào [`experiments/results.csv`](../experiments/results.csv) trên nhánh của bạn để cả nhóm biết mô hình nào đang tốt nhất.
+- **Ghi kết quả:** Cập nhật ngay 1 dòng vào [`results/results.csv`](../results/results.csv) trên nhánh của bạn để cả nhóm biết mô hình nào đang tốt nhất.
 
 ### Bước 5: Chọn 2 bài nộp cuối cùng (Trước 30/11/2026 23:59 UTC)
 - Vào tab **Submissions** của cuộc thi → đánh dấu tick vào **2 bài nộp** dùng để tính điểm Private Leaderboard:
@@ -108,7 +108,7 @@ git checkout a-hung
 git fetch origin
 git merge origin/main
 
-# 2. Thêm notebook / code / cập nhật experiments/results.csv
+# 2. Thêm notebook / code / cập nhật results/results.csv
 git status
 git add .
 git commit -m "exp: lgbm_a_v2 cv=0.9412 add ratio features"
@@ -116,6 +116,6 @@ git push origin a-hung
 ```
 
 ### Đưa kết quả tốt vào `main`
-- Khi có một notebook/module hoàn chỉnh hoặc cập nhật bảng `experiments/results.csv`, mở **Pull Request** từ nhánh cá nhân (`a-hung`) vào `main` trên giao diện web GitHub.
+- Khi có một notebook/module hoàn chỉnh hoặc cập nhật bảng `results/results.csv`, mở **Pull Request** từ nhánh cá nhân (`a-hung`) vào `main` trên giao diện web GitHub.
 - Nhờ 1 thành viên khác kiểm tra nhanh rồi nhấn **Merge pull request**.
-- File `.gitattributes` đã được cấu hình `experiments/results.csv merge=union`, nên khi 2 thành viên cùng thêm dòng mới vào `results.csv` ở 2 nhánh khác nhau, Git sẽ **tự động giữ lại cả hai dòng** mà không báo xung đột (conflict).
+- File `.gitattributes` đã được cấu hình `results/results.csv merge=union`, nên khi 2 thành viên cùng thêm dòng mới vào `results/results.csv` ở 2 nhánh khác nhau, Git sẽ **tự động giữ lại cả hai dòng** mà không báo xung đột (conflict).

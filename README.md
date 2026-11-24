@@ -111,13 +111,13 @@ Gợi ý tiền tố commit: `feat:` (thêm chức năng), `exp:` (thí nghiệm
 
 ## Kết quả
 
-| exp_id | Mô tả | CV AUC | Public LB | Private LB |
+| exp_id | Mô tả & Họ thuật toán | CV AUC | Public LB | Trạng thái |
 |---|---|---|---|---|
-| `lgbm_a_v1` | LightGBM Baseline (24 raw features, 5-fold Stratified) | **0.94544** ± 0.00321 | **0.94568** | _[Chưa mở]_ |
-| `lgbm_a_v2` | LightGBM v2 Tuned (`num_leaves=31`, `colsample=0.7`, `lr=0.04`) | **0.94647** ± 0.00311 | **0.94654** | _[Chưa mở]_ |
-| `cat_c_v1` | CatBoost Tuned (`depth=4`, `l2_reg=3.0`, `lr=0.06`) | **0.94665** ± 0.00283 | **0.94736** | _[Chưa mở]_ |
-| `xgb_b_v1` | XGBoost Tuned GPU (`max_depth=4`, `colsample=0.8`, `mcw=20`) | **0.94697** ± 0.00301 | **0.94759** | _[Chưa mở]_ |
-| `ens_c_v1` | Ensemble Local Rank Average (LGBM v2 + XGB v1 + CatBoost v1) | **0.94732** ± 0.00280 | **0.94760** | _[Chưa mở]_ |
-| `ens_mega_v2` | Mega Ensemble (85% Simplex Apex + 10% Fortress + 5% Local GBDT) | **0.95218** ± 0.00280 | **0.95419** | _[Chưa mở]_ |
-| `ens_sovereign_apex` | 🏆 **3-Vertex Simplex Apex Centroid (Deep Neural + GPT2 + TabPFN + GBDT)** (Submission cuối #1) | **0.95256** ± 0.00275 | **0.95423** | _[Chưa mở]_ |
-| `ens_c_v1` | 🛡️ **Ensemble Độc Lập Nội Bộ (LGBM + XGBoost + CatBoost)** (Submission cuối #2) | **0.94732** ± 0.00280 | **0.94760** | _[Chưa mở]_ |
+| `lgbm_a_v1` | LightGBM Baseline (24 raw features, 5-fold Stratified) **[ML]** | **0.94544** ± 0.00321 | **0.94568** | Baseline |
+| `lgbm_a_v2` | LightGBM v2 Tuned (`num_leaves=31`, `colsample=0.7`, `lr=0.04`) **[ML]** | **0.94647** ± 0.00311 | **0.94654** | Hoàn thành |
+| `cat_c_v1` | CatBoost Tuned (`depth=4`, `l2_reg=3.0`, `lr=0.06`) **[ML]** | **0.94665** ± 0.00283 | **0.94736** | Hoàn thành |
+| `xgb_b_v1` | XGBoost Tuned GPU (`max_depth=4`, `colsample=0.8`, `mcw=20`) **[ML]** | **0.94697** ± 0.00301 | **0.94759** | Hoàn thành |
+| `mlp_c_v1` | PyTorch Tabular MLP (Entity Embeddings + BatchNorm + SiLU) **[DL]** | **0.94167** ± 0.00359 | **0.94326** | Hoàn thành |
+| `ens_c_v1` | 🏆 **Ensemble Rank Average (LGBM v2 + XGB v1 + CatBoost v1)** **[Pure ML/DL]** | **0.94732** ± 0.00280 | **0.94760** | **Bài nộp chính #1 (Bảo vệ)** |
+| `xgb_b_v1` | 🛡️ **Single Model mạnh nhất (XGBoost GPU)** **[Pure ML]** | **0.94697** ± 0.00301 | **0.94759** | **Bài nộp chính #2 (Dự phòng)** |
+| `ens_sovereign_apex` | _Thử nghiệm mở rộng: 3-Vertex Simplex Apex Centroid (Kaggle Frontier)_ | **0.95256** ± 0.00275 | **0.95423** | Tham khảo |

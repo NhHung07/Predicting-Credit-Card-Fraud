@@ -115,7 +115,9 @@ Gợi ý tiền tố commit: `feat:` (thêm chức năng), `exp:` (thí nghiệm
 |---|---|---|---|---|
 | `lgbm_a_v1` | LightGBM Baseline (24 raw features, 5-fold Stratified) | **0.94544** ± 0.00321 | **0.94568** | _[Chưa mở]_ |
 | `lgbm_a_v2` | LightGBM v2 Tuned (`num_leaves=31`, `colsample=0.7`, `lr=0.04`) | **0.94647** ± 0.00311 | **0.94654** | _[Chưa mở]_ |
-| `xgb_b_v1` | XGBoost Tuned GPU (`max_depth=4`, `colsample=0.8`, `mcw=20`) | **0.94697** ± 0.00301 | **0.94759** | _[Chưa mở]_ |
 | `cat_c_v1` | CatBoost Tuned (`depth=4`, `l2_reg=3.0`, `lr=0.06`) | **0.94665** ± 0.00283 | **0.94736** | _[Chưa mở]_ |
-| `ens_c_v1` | **Ensemble Rank Average (LGBM v2 + XGB v1 + CatBoost v1)** (Submission cuối #1) | **0.94732** ± 0.00280 | **0.94760** | _[Chưa mở]_ |
-| `xgb_b_v1` | **Single Model mạnh nhất (XGBoost GPU)** (Submission cuối #2) | **0.94697** ± 0.00301 | **0.94759** | _[Chưa mở]_ |
+| `xgb_b_v1` | XGBoost Tuned GPU (`max_depth=4`, `colsample=0.8`, `mcw=20`) | **0.94697** ± 0.00301 | **0.94759** | _[Chưa mở]_ |
+| `ens_c_v1` | Ensemble Local Rank Average (LGBM v2 + XGB v1 + CatBoost v1) | **0.94732** ± 0.00280 | **0.94760** | _[Chưa mở]_ |
+| `ens_mega_v2` | Mega Ensemble (85% Simplex Apex + 10% Fortress + 5% Local GBDT) | **0.95218** ± 0.00280 | **0.95419** | _[Chưa mở]_ |
+| `ens_sovereign_apex` | 🏆 **3-Vertex Simplex Apex Centroid (Deep Neural + GPT2 + TabPFN + GBDT)** (Submission cuối #1) | **0.95256** ± 0.00275 | **0.95423** | _[Chưa mở]_ |
+| `ens_c_v1` | 🛡️ **Ensemble Độc Lập Nội Bộ (LGBM + XGBoost + CatBoost)** (Submission cuối #2) | **0.94732** ± 0.00280 | **0.94760** | _[Chưa mở]_ |

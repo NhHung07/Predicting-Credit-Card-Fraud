@@ -1,2 +1,6 @@
 date,exp_id,member,model,features,n_folds,cv_auc,cv_std,lb_public,notebook_or_commit,notes
 2026-11-12,lgbm_a_v1,A,LightGBM,raw_24f,5,0.94544,0.00321,0.94568,A/02_baseline_lgbm.ipynb,baseline 5-fold stratified
+2026-11-24,lgbm_a_v2,A,LightGBM,raw_24f_tuned,5,0.94647,0.00311,0.94654,A/03_lgbm_tuned.ipynb,Tuned num_leaves=31 colsample=0.7 lr=0.04
+2026-11-24,xgb_b_v1,B,XGBoost,raw_24f_tuned,5,0.94697,0.00301,0.94759,B/01_xgb.ipynb,Tuned max_depth=4 colsample=0.8 min_child_weight=20
+2026-11-24,cat_c_v1,C,CatBoost,raw_24f_tuned,5,0.94665,0.00283,0.94736,C/01_catboost.ipynb,Tuned depth=4 l2_leaf_reg=3 lr=0.06
+2026-11-24,ens_c_v1,C,Ensemble,blend_rank,5,0.94732,0.00280,0.94760,C/02_ensemble_stacking.ipynb,Rank Average of Tuned LGBM+XGB+CatBoost

@@ -1,1 +1,2 @@
 date,exp_id,member,model,features,n_folds,cv_auc,cv_std,lb_public,notebook_or_commit,notes
+2026-11-24,xgb_b_v1,B,XGBoost,raw_24f,5,0.946032,0.003139,,B/01_xgb_baseline.ipynb,OOF AUC 0.945983; native categorical; 600 fixed rounds; local CUDA
